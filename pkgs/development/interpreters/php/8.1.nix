@@ -4,6 +4,7 @@ let
   base = callPackage ./generic.nix (_args // {
     version = "8.1.27";
     hash = "sha256-oV/XPqRPLfMLB9JHhuB9GUiw6j7tC4uEVzXVANwov/E=";
+    extraPatches = [ ./libxml212.patch ];
   });
 in
 base.withExtensions ({ all, ... }: with all; ([
